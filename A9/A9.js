@@ -7,10 +7,10 @@ var concatStream = require('concat-stream');
 //my vars
 var arr = [];
 var collected = 0;
+var urls = process.argv.slice(2);
+var holder = '';
 
 function getData(i){
-		var urls = process.argv.slice(2);
-		var holder = '';
 		
 		http.get(urls[i], function(response){
 			response.pipe(concatStream(function(data){
